@@ -1,7 +1,7 @@
-#  -f .tmux/.tmux.conftsenv
+# TSenv 
 
-cd
-ln -s -f .tsenv/.tmux.conf
-ln -s -f .tsenv/.tmux.conf.local
+	cd
+	ln -s -f .tsenv/.tmux.conf
+	ln -s -f .tsenv/.tmux.conf.local
 
 
