@@ -20,7 +20,7 @@ set number
 set cursorline
 
 " Highlight cursor line underneath the cursor vertically.
-set cursorcolumn
+"set cursorcolumn
 
 " Set shift width to 4 spaces.
 set shiftwidth=4
@@ -74,6 +74,17 @@ set wildmode=list:longest
 " There are certain files that we would never want to edit with Vim.
 " Wildmenu will ignore files with these extensions.
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+
+set autoindent      " always set autoindenting on
+
+set ruler       " show the cursor position all the time
+
+" Do not create swap files.
+set noswapfile
+
+" I like highlighting strings inside C comments
+let c_comment_strings=1
+colorscheme elflord
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
