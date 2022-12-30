@@ -15,5 +15,6 @@ Tmux conf from https://github.com/gpakosz/.tmux
 	ln -s -f .tsenv/.tmux.conf
 	ln -s -f .tsenv/.tmux.conf.local
 	ln -s -f .tsenv/.vimrc
+	ln -s -f .tsenv/.profile
 
 
