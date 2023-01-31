@@ -21,7 +21,12 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/bin:/usr/local/sbin:/usr/X11R6/bin:$HOME/bin; export PATH
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/bin:/usr/local/sbin:/usr/X11R6/bin; export PATH
 
 BLOCKSIZE=K;    export BLOCKSIZE
 EDITOR=vi;      export EDITOR
@@ -32,6 +37,6 @@ PS1="\[\e[32m\]\u\[\e[0m\]@\[\e[33m\]\h\[\e[0m\]:\[\e[36m\]\w\[\e[0m\]]"; export
 alias ls="ls -FAG"
 alias ll="ls -laFAG"
 #alias ftp=ncftp3
-#alias vi=vim
+alias vi=vim
 
 #screen -R -D

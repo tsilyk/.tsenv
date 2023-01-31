@@ -32,3 +32,11 @@ systemctl list-units --type target
 systemctl get-default
 sudo systemctl isolate multi-user.target
 sudo systemctl isolate graphical.target
+
+
+# Extract ip 
+ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
+
+#delete empty line coments etc
+grep "^[^#*/;]" host83.conf > host83.conf_
+
