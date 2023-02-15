@@ -40,3 +40,32 @@ ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
 #delete empty line coments etc
 grep "^[^#*/;]" host83.conf > host83.conf_
 
+
+How to check if port is in use in
+
+    sudo lsof -i -P -n | grep LISTEN
+    sudo netstat -tulpn | grep LISTEN
+    sudo ss -tulpn | grep LISTEN
+    sudo lsof -i:22 ## see a specific port such as 22 ##
+    sudo nmap -sTU -O IP-address-Here
+
+
+    sudo lsof -i -P -n
+    sudo lsof -i -P -n | grep LISTEN
+
+
+Run the netstat command along with grep command to filter out port in LISTEN state:
+
+    netstat -tulpn | grep LISTEN
+    netstat -tulpn | more
+
+OR filter out specific TCP port such as 443:
+
+    netstat -tulpn | grep ':443'
+
+The netstat command deprecated for some time on Linux. Therefore, you need to use the ss command as follows:
+
+    sudo ss -tulw
+    sudo ss -tulwn
+    sudo ss -tulwn | grep LISTEN
+
