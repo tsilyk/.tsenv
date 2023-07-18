@@ -34,9 +34,12 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/Library/Python/3.11/bin" ] ; then
+    PATH="$HOME/Library/Python/3.11/bin:$PATH"
+fi
+
 alias ls="ls -FAG"
 alias ll="ls -laFAG"
-#alias ftp=ncftp3
 alias vi=vim
 
-#screen -R -D
